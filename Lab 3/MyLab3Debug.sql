@@ -1,0 +1,41 @@
+# 1)
+SELECT product_code, product_name, list_price, discount_percent
+FROM Products
+ORDER BY list_price DESC;
+
+# 2)
+SELECT concat(last_name, ", ", first_name) as full_name
+from Customers
+WHERE last_name >= 'M'
+ORDER BY last_name ASC;
+
+# 3)
+SELECT product_name, list_price, date_added
+from Products
+where list_price BETWEEN 500 and 2000
+ORDER BY date_added DESC;
+
+# 4)
+SELECT product_name, list_price, discount_price, ROUND(list_price*discount_percent,2) as discount_amount, 
+ROUND(list_price-(list_price*discount_percent),2) as discount_price
+From Products
+ORDER BY discount_price desc
+LIMIT 5;
+
+# 5)
+SELECT item_id, item_price, discount_amount, quantity, (item_price * quantity) as price_total, (discount_amount * quantity) as discount_total, ((item_price - discount_amount) * quantity) as item_total
+FROM Order_Items
+WHERE item_total > 500
+ORDER BY item_total DESC;
+
+# 6) 
+SELECT order_id, order_date, ship_date
+FROM Orders
+WHERE ship_date is NULL;
+
+
+# 7)
+SELECT NOW() AS today_unformatted, DATE_FORMAT(NOW(), '%e-%b-%Y') as today_formatted;
+
+# 8)
+SELECT (100) as price, (0.07) as tax_rate, (100*0.07) as tax_amount, (100+(100*0.07)) as total;

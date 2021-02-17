@@ -40,7 +40,7 @@ where category_id = (select category_id from categories where category_name = "W
 #		date_added:			Today’s date/time.
 # Use a column list for this statement
 insert into products 
-(product_id, category_id, product_code, product_name, descrption, list_price, discount_percent, date_added)
+(product_id, category_id, product_code, product_name, description, list_price, discount_percent, date_added)
 values
 (default, 4, "dgx_640", "Yamaha DGX 640 88-Key Digital Piano", "Long description to come.", 799.99, 0, now());
 

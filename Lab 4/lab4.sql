@@ -51,7 +51,8 @@ order by last_name, order_date, product_name;
 select p1.product_name, p1.list_price
 from products as p1 
 join products as p2 on p1.list_price = p2.list_price
-where p1.product_id != p2.product_id;
+where p1.product_id != p2.product_id
+order by product_name;
 
 
 
